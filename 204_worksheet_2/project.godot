@@ -14,6 +14,12 @@ config/name="204 Worksheet 2"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://Art/icon.svg"
 
+[layer_names]
+
+2d_physics/layer_1="World"
+2d_physics/layer_2="Objects"
+2d_physics/layer_3="World"
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"
