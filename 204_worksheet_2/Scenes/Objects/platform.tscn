@@ -1,3 +1,16 @@
-[gd_scene format=3 uid="uid://66cfg2mmm1d4"]
+[gd_scene load_steps=3 format=3 uid="uid://66cfg2mmm1d4"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_a0gat"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eibmd"]
+size = Vector2(270, 54)
 
 [node name="Platform" type="StaticBody2D"]
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+scale = Vector2(270.5, 53.5)
+mesh = SubResource("BoxMesh_a0gat")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_eibmd")
+debug_color = Color(0, 0, 0, 0.42)
