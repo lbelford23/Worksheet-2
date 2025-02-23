@@ -1,3 +1,16 @@
-[gd_scene format=3 uid="uid://62ajfiilyy4b"]
+[gd_scene load_steps=3 format=3 uid="uid://62ajfiilyy4b"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_a4v4k"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6n3c0"]
+radius = 32.0
 
 [node name="BouncyBall" type="RigidBody2D"]
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+scale = Vector2(64, 64)
+mesh = SubResource("SphereMesh_a4v4k")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_6n3c0")
+debug_color = Color(0.555705, 0.561677, 1.92523e-07, 0.42)

@@ -1,3 +1,13 @@
-[gd_scene format=3 uid="uid://6vwcnhd5tpca"]
+[gd_scene load_steps=2 format=3 uid="uid://6vwcnhd5tpca"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_iomar"]
 
 [node name="Pillar" type="RigidBody2D"]
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+rotation = -1.5708
+scale = Vector2(519.75, 94)
+mesh = SubResource("CapsuleMesh_iomar")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(47, 260, -48, 260, -71, 221, -91, 84, -94, -1, -91, -91, -67, -236, -46, -260, 46, -260, 67, -235, 91, -93, 94, 1, 91, 87, 72, 217)
