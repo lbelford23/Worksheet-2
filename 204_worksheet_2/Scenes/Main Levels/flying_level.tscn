@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bacejbih45u6b"]
+[gd_scene load_steps=12 format=3 uid="uid://bacejbih45u6b"]
 
 [ext_resource type="PackedScene" uid="uid://dyecnlnb4mjhj" path="res://Scenes/Characters/flying_player.tscn" id="1_ksytu"]
 [ext_resource type="Script" path="res://Scenes/Main Levels/follow_cam.gd" id="2_rc0du"]
@@ -8,7 +8,6 @@
 [ext_resource type="PackedScene" uid="uid://66cfg2mmm1d4" path="res://Scenes/Objects/platform.tscn" id="5_ju75u"]
 [ext_resource type="PackedScene" uid="uid://62ajfiilyy4b" path="res://Scenes/Objects/bouncy_ball.tscn" id="6_b2ef8"]
 [ext_resource type="PackedScene" uid="uid://6vwcnhd5tpca" path="res://Scenes/Objects/pillar.tscn" id="7_e7y86"]
-[ext_resource type="PackedScene" uid="uid://pdt7hngywhnl" path="res://Scenes/Main Levels/basic_level.tscn" id="9_vd8sh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fhulw"]
 size = Vector2(2054, 815)
@@ -884,7 +883,7 @@ visibility_layer = 1
 anchors_preset = -1
 anchor_top = 0.003
 offset_top = -1.944
-next_scene = ExtResource("9_vd8sh")
+next_scene = "C:/dev/godot-projects/Worksheet-2/204_worksheet_2/Scenes/Main Levels/basic_level.tscn"
 
 [connection signal="body_entered" from="Goal" to="Goal" method="_on_body_entered"]
 [connection signal="level_complete" from="Goal" to="CanvasLayer/LevelComplete" method="show_ui"]

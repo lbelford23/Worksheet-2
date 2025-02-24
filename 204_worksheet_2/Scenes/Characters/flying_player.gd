@@ -25,6 +25,12 @@ func _physics_process(delta):
 	elif Input.is_action_pressed("move_down"):
 		velocity += transform.y * acceleration * delta
 	
+	#if velocity tries to go above the max_velocity "speed limit"...
+	if velocity.length() > max_velocity:
+		#whatever the length was, normalize it to 1
+		var norm_velocity = velocity.normalized()
+		#multiply normalized velocity * max_velocity to travel at exactly the max
+		velocity = norm_velocity * max_velocity
 	
 	move_and_slide()
 	push_objects()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://pdt7hngywhnl"]
+[gd_scene load_steps=12 format=3 uid="uid://pdt7hngywhnl"]
 
 [ext_resource type="PackedScene" uid="uid://66cfg2mmm1d4" path="res://Scenes/Objects/platform.tscn" id="1_2u8fr"]
 [ext_resource type="Script" path="res://Scenes/Main Levels/follow_cam.gd" id="2_e54d0"]
@@ -8,7 +8,6 @@
 [ext_resource type="Script" path="res://Scenes/Objects/goal.gd" id="4_gbcdy"]
 [ext_resource type="Script" path="res://Scenes/Objects/disappearing_platform.gd" id="4_i0muk"]
 [ext_resource type="PackedScene" uid="uid://bqgryg37malrb" path="res://Scenes/UI/level_complete.tscn" id="5_qsq1c"]
-[ext_resource type="PackedScene" uid="uid://bacejbih45u6b" path="res://Scenes/Main Levels/flying_level.tscn" id="9_6cw45"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fhulw"]
 size = Vector2(2054, 815)
@@ -268,7 +267,7 @@ visibility_layer = 1
 anchors_preset = -1
 anchor_top = 0.003
 offset_top = -1.944
-next_scene = ExtResource("9_6cw45")
+next_scene = "C:/dev/godot-projects/Worksheet-2/204_worksheet_2/Scenes/Main Levels/flying_level.tscn"
 
 [connection signal="body_entered" from="Goal" to="Goal" method="_on_body_entered"]
 [connection signal="level_complete" from="Goal" to="DisappearingPlatform" method="disappear"]
