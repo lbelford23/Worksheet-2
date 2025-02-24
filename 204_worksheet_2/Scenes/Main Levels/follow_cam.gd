@@ -2,11 +2,14 @@ extends Camera2D
 
 @export var zoomed_in_value = 1
 @export var zoomed_out_value = 0.5
-var zoomed = true
+@export var zoomed = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	if zoomed:
+		zoom_in()
+	else:
+		zoom_out()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
