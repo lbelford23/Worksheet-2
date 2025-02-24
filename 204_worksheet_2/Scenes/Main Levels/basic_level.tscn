@@ -1,7 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://pdt7hngywhnl"]
+[gd_scene load_steps=11 format=3 uid="uid://pdt7hngywhnl"]
 
 [ext_resource type="PackedScene" uid="uid://66cfg2mmm1d4" path="res://Scenes/Objects/platform.tscn" id="1_2u8fr"]
+[ext_resource type="Script" path="res://Scenes/Main Levels/follow_cam.gd" id="2_e54d0"]
 [ext_resource type="PackedScene" uid="uid://cic67wtim4d16" path="res://Scenes/Characters/basic_player.tscn" id="2_i37mo"]
+[ext_resource type="PackedScene" uid="uid://b5wa364xoklko" path="res://Scenes/UI/goal_indicator.tscn" id="2_y4m7x"]
 [ext_resource type="PackedScene" uid="uid://62ajfiilyy4b" path="res://Scenes/Objects/bouncy_ball.tscn" id="3_1kutb"]
 [ext_resource type="Script" path="res://Scenes/Objects/disappearing_platform.gd" id="4_i0muk"]
 [ext_resource type="PackedScene" uid="uid://bwfthj4b6grum" path="res://Scenes/Objects/goal.tscn" id="4_u2ojm"]
@@ -18,7 +20,14 @@ bounce = 0.4
 [node name="BasicPlayer" parent="." instance=ExtResource("2_i37mo")]
 position = Vector2(357, 105)
 
-[node name="Camera2D" type="Camera2D" parent="BasicPlayer"]
+[node name="FollowCam" type="Camera2D" parent="BasicPlayer"]
+script = ExtResource("2_e54d0")
+
+[node name="GoalIndicator" parent="BasicPlayer" node_paths=PackedStringArray("player", "target_node") instance=ExtResource("2_y4m7x")]
+position = Vector2(0, -200)
+scale = Vector2(2, 2)
+player = NodePath("..")
+target_node = NodePath("../../Goal")
 
 [node name="Goal" parent="." instance=ExtResource("4_u2ojm")]
 position = Vector2(3262, 1465)
@@ -180,4 +189,5 @@ offset_top = -1.944
 [connection signal="level_complete" from="Goal" to="DisappearingPlatform" method="disappear"]
 [connection signal="level_complete" from="Goal" to="CanvasLayer/LevelComplete" method="show_ui"]
 
+[editable path="BasicPlayer/GoalIndicator"]
 [editable path="Goal"]
